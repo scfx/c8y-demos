@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkc_8_y_docs=self.webpackChunkc_8_y_docs||[]).push([[3956],{5526:s=>{s.exports=JSON.parse('{"label":"facebook","permalink":"/c8y-demos/blog/tags/facebook","allTagsPath":"/c8y-demos/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkc_8_y_docs=self.webpackChunkc_8_y_docs||[]).push([[747],{7621:e=>{e.exports=JSON.parse('{"permalink":"/c8y-demos/blog/tags/hello","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

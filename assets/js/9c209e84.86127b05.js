@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkc_8_y_docs=self.webpackChunkc_8_y_docs||[]).push([[7915],{8542:s=>{s.exports=JSON.parse('{"label":"hello","permalink":"/c8y-demos/blog/tags/hello","allTagsPath":"/c8y-demos/blog/tags","count":2,"unlisted":false}')}}]);
