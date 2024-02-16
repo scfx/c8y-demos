@@ -1,52 +1,87 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Industry Simulators',
+    src: require('@site/static/img/simulators.png').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Various go-cli simulators that generate industry-specific data.
       </>
     ),
+    type: 'img',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Thin-edge.io',
+    src: require('@site/static/img/thin-edge.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Multiple Demos on how to use and extend thin-edge.io with Cumulocity IoT.
       </>
     ),
+    type: 'svg',
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Device Protocols',
+    src: require('@site/static/img/simulators.png').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Multiple Demos to demonstrate how various industry protocols are integrated and can be used with Cumulocity IoT.
       </>
     ),
+    type: 'img',
   },
 ];
 
-function Feature({Svg, title, description}) {
+function FeatureSvg({ Svg, title, description, link }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <Svg className={styles.featureSvg} />
       </div>
       <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to={link}>
+            {title}
+          </Link>
+        </div>
         <p>{description}</p>
       </div>
     </div>
   );
+}
+
+function FeatureImg({ img, title, description, link }) {
+  return (
+    <div className={clsx('col col--4')}>
+      <div className="text--center">
+        <img src={img} className={styles.featureImg} role="img" />
+      </div>
+      <div className="text--center padding-horiz--md">
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to={link}>
+            {title}
+          </Link>
+        </div>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function Feature({ src, title, description, type }) {
+  if (type === 'svg') {
+    return <FeatureSvg Svg={src} title={title} description={description} />;
+  } else {
+    return <FeatureImg img={src} title={title} description={description} />;
+  }
 }
 
 export default function HomepageFeatures() {
