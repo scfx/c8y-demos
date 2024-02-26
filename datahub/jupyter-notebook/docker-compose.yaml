@@ -1,0 +1,12 @@
+services:
+  jupyter:
+    build:
+      dockerfile: jupyter/Dockerfile
+      args:
+      - DOWNLOAD_LINK=https://download.dremio.com/arrow-flight-sql-odbc-driver/arrow-flight-sql-odbc-driver-LATEST.x86_64.rpm
+    privileged: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/home/jovyan/work
+    platform: linux/amd64
