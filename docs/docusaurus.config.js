@@ -73,7 +73,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Demos',
           },
           {
             href: 'https://github.com/scfx/c8y-demos',
@@ -90,7 +90,7 @@ const config = {
             items: [
               {
                 label: 'How to add a Demo',
-                to: '/docs/add-demo',
+                to: 'docs/category/how-to-add-a-demo',
               },
             ],
           },

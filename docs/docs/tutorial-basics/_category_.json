@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Basics",
-  "position": 2,
+  "label": "How to add a demo",
+  "position": 99,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "5 minutes to learn the most important Docusaurus concepts to add a demo documentation."
   }
 }
