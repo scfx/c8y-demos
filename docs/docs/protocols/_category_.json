@@ -1,0 +1,8 @@
+{
+  "label": "Device protocols",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Cumulocity c8y-go-cli simulators"
+  }
+}
