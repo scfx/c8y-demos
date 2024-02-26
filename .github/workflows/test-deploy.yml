@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-              run cd ./docs
+              cd ./docs
               npm ci
       - name: Test build website
         run: |
