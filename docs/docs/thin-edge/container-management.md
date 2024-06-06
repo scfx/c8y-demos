@@ -118,9 +118,6 @@ CONTAINER_RUN_OPTIONS="--cpus 1 --memory 64m"
 
 The plugin also includes a service which monitors the running status of the containers and includes some runtime metrics such as memory, cpu and network io. Please note that access to the container monitoring might not be supported by your container engine. When in doubt, just manually do a `docker stats` and if the data is only showing zeros, then the plugin will also see zeros.
 
-#### Telemetry
-
-Checkout the [TELEMETRY](./docs/TELEMETRY.md) docs for details on what is included in the telemetry data.
 
 #### Configuration
 
@@ -246,17 +243,17 @@ To use the UI-Plugin, download the tedge-container-plugin-ui.zip version that ma
 #### Container Info Tab
 
 The tab will be enabled for all services of type container. Displays the container properties that are stored in the managed Object.
-![Container Info Screenshot](./docs/img/container-info.png)
+![Container Info Screenshot](./resource/container-info.png)
 
 #### Container Management Tab
 
 The tab will be enabled for all devices with a childAddition with serviceType=container. Lists all containers in a grid or list.The search can be used for the image name and the project id. The list can include/exclude the containers that are part of a container group.
-![Container Container Management Screenshot](./docs/img/container-management.png)
+![Container Container Management Screenshot](./resource/container-management.png)
 
 #### Container Group Management Tab
 
 The tab will be enabled for all devices with a childAddition with serviceType=container. Lists all containers that are part of a project. The filter/search can be used to search for project names or container images.
-![Container Container Management Screenshot](./docs/img/container-group-management.png)
+![Container Container Management Screenshot](./resource/container-group-management.png)
 
 ## Developers
 
