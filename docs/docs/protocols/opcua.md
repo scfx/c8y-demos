@@ -21,9 +21,7 @@ However thats where a modified version of the OPC UA Gateway agent can be used. 
 <br/><br/>
 <p style="text-indent:30px;">
   <a>
-  <center>
     <img width="90%" src="./img/thin-edge-diagram.svg">
-  </center>
   </a>
 </p>
 <br/>
@@ -97,9 +95,7 @@ The Simulation Server simulates a machine within a factory. Values are updated e
 <br/><br/>
 <p style="text-indent:30px;">
   <a>
-  <center>
     <img width="90%" src="./img/OPC_Tree.png">
-  </center>
   </a>
 </p>
 <br/>
@@ -131,9 +127,7 @@ To connect to the simulation OPC UA server enter url opc.tcp://opcserver:4840 or
 <br/><br/>
 <p style="text-indent:30px;">
   <a>
-  <center>
     <img width="90%" src="http://g.recordit.co/i7wj3cbYQm.gif">
-  </center>
   </a>
 </p>
 <br/>
