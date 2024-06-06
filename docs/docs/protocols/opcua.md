@@ -19,12 +19,9 @@ The architecture allows that other components can be used on thin-edge.io. This 
 However thats where a modified version of the OPC UA Gateway agent can be used. In this solution the steps to create that solution as well as the underlying idea are described.
 
 <br/><br/>
-<p style="text-indent:30px;">
-  <a>
-    <img width="90%" src="./img/thin-edge-diagram.svg">
-  </a>
-</p>
-<br/>
+
+![Image](./img/thin-edge-diagram.svg)
+
 
 # Quickstart
 
@@ -93,12 +90,9 @@ However if you use your own certificate this step can be ignored but you need to
 The Simulation Server simulates a machine within a factory. Values are updated every 2s.
 
 <br/><br/>
-<p style="text-indent:30px;">
-  <a>
-    <img width="90%" src="./img/OPC_Tree.png">
-  </a>
-</p>
-<br/>
+
+![Image](./img/OPC_Tree.png)
+
 
 You can change the tree before building the container.
 
@@ -125,12 +119,8 @@ The device representation of the OPC UA Gateway is a child-device for the thin-e
 To connect to the simulation OPC UA server enter url opc.tcp://opcserver:4840 or the url of the real OPC UA Server.
 
 <br/><br/>
-<p style="text-indent:30px;">
-  <a>
-    <img width="90%" src="http://g.recordit.co/i7wj3cbYQm.gif">
-  </a>
-</p>
-<br/>
+
+![OPC Server](http://g.recordit.co/i7wj3cbYQm.gif)
 
 You can define which data points are translated in the device protocol section of cumulocity.
 
