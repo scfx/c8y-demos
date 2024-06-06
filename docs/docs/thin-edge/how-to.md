@@ -14,7 +14,6 @@ The following pre-requisites are required before you can get started:
 * docker
 * docker compose v2 (not the python one)
 
-Check out the list of [known working setups](./docs/USER_GUIDE.md#known-working-environments) to see what software you can use for your Operating Systemd to meet the pre-requisites.
 
 ## Getting started
 
@@ -45,8 +44,6 @@ Check out the list of [known working setups](./docs/USER_GUIDE.md#known-working-
 4. Click on the link to your tedge device which is shown on the console
 
 
-Check out the [USER GUIDE](./docs/USER_GUIDE.md) for more details on other commands that can be run.
-
 **Note**
 
 The tedge container has the following default SSH user which can be used with the SSH protocol of the Cumulocity IoT Cloud Remote Access (CRA) feature.
@@ -70,7 +67,7 @@ Once you have [just](https://github.com/casey/just) installed, you can proceed w
     just create-env
     ```
 
-    Fill in the values for each of the environment variables in the [.env](./.env) file. Whilst the settings in the `.env` file are not mandatory, it does allow you to set sensible defaults for your setup so that you don't have to enter your username or Cumulocity URL multiple times during the bootstrapping phase.
+    Fill in the values for each of the environment variables in the `.env` file. Whilst the settings in the `.env` file are not mandatory, it does allow you to set sensible defaults for your setup so that you don't have to enter your username or Cumulocity URL multiple times during the bootstrapping phase.
 
 2. Start the docker compose project (this will also build the containers)
 

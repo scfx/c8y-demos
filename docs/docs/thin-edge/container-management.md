@@ -287,7 +287,7 @@ To build the linux packages use the following steps:
 
 ### Running system tests
 
-You can run the system tests can be run locally, however if you're having problem, look at the [test.yaml](.github/workflows/test.yaml) workflow for the tests as this is known to work.
+You can run the system tests can be run locally.
 
 If you're using VS Code, then you can also install the following extensions to enable running tests via the `tests/*robot` files:
 * robocorp.robocorp-code
