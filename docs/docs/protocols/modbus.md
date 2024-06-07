@@ -8,32 +8,6 @@ sidebar_position: 2
 Thin-edge.io modbus community plugin.
 Plugin for polling Modbus devices and publishing the data to thin-edge.io. If used with Cumulocity IoT, the plugin can be managed via software configuration management. The Plugin also supports some of the [cloud fieldbus](https://cumulocity.com/guides/protocol-integration/cloud-fieldbus/) operations to set the modbus mapping via Cumulocity IoT UI.
 
-## Table of contents
-
-- [Modbus](#modbus)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Requirements](#requirements)
-  - [Demo](#demo)
-  - [Config files](#config-files)
-    - [modbus.toml](#modbustoml)
-    - [devices.toml](#devicestoml)
-    - [Updating the config files](#updating-the-config-files)
-  - [Logs and systemd service](#logs-and-systemd-service)
-  - [Cumulocity Integration](#cumulocity-integration)
-    - [Installation via Software Management](#installation-via-software-management)
-    - [Log file access](#log-file-access)
-    - [Config management](#config-management)
-    - [Cloud Fieldbus](#cloud-fieldbus)
-  - [Testing](#testing)
-  - [Build](#build)
-    - [Debian package](#debian-package)
-  - [Deployment](#deployment)
-    - [As Python script (for dev only)](#as-python-script-for-dev-only)
-    - [As deb file](#as-deb-file)
-  - [Contributing](#contributing)
-    - [Coding Style](#coding-style)
-
 ## Overview
 
 The plugin regularly polls Modbus devices and publishes the data to the thin-edge.io broker. The plugin is based on the [pymodbus](https://pymodbus.readthedocs.io/en/latest/) library. After installing, the plugin can be configured by changing the modbus.toml and devices.toml files. The plugin comes with an example config [4] with comments to get you started. Adding multiple servers should also be as simple as adding additional [[device]] sections for each IP address you want to poll.
@@ -49,9 +23,9 @@ The plugin regularly polls Modbus devices and publishes the data to the thin-edg
 ## Demo
 
 You can run the thin-edge.io with the plugin and a modbus simulator locally via Docker containers. To start the demo, run 'just up' in the root folder of the repository. This will start the tedge container and the modbus simulator.
-The modbus simulator runs a modbus server with some example registers. The simulator is based on the [pymodbus](https://pymodbus.readthedocs.io/en/latest/) library and can be found and changed in the [images/simulator](./images/simulator/) folder.
+The modbus simulator runs a modbus server with some example registers. The simulator is based on the [pymodbus](https://pymodbus.readthedocs.io/en/latest/) library.
 
-The demo includes a example device that maps an integer and float register to a Child Device. The device config can be found in the [images/tedge/config](./images/tedge/config) folder.
+The demo includes a example device that maps an integer and float register to a Child Device.
 
 To start the containers, you need to have docker-compose installed. You can start the containers with:
 
@@ -126,7 +100,9 @@ Go to the Software tab of the target device and select the package for installat
 
 For integration with the Cumulocity IoT log plugin add the following line to the /etc/tedge/c8y/c8y-log-plugin.toml
 
+```sh
     { type = "modbus", path = "/var/log/tedge-modbus-plugin/modbus.log" }
+```
 
 ![Image](./img/log.png)
 
@@ -136,9 +112,11 @@ Both config files can either be updated in-place (i.e. simply editing with an ed
 by using the c8y-configuration plugin. Add the following lines to the c8y-configuration-plugin.toml
 to be able to access them from the Cumulocity Configuration UI:
 
+  ```sh
     {path = '/etc/tedge/plugins/modbus/modbus.toml', type='modbus'},
     {path = '/etc/tedge/plugins/modbus/devices.toml', type='modbus-devices'}
-
+  ```
+  
 To replace the files with a version from the Cumulocity Configuration Repository you have to download a copy,
 edit it and upload it to the repository. The device type **must** be set to _thin-edge.io_ and the config type must match
 the definition in your c8y-configuration-plugin.toml. I.e either _modbus_ (for modbus.toml) or _modbus-devices_ for (devices.toml)
@@ -175,10 +153,11 @@ To run the tests locally, you need to provide your Cumulocity credentials as env
 
 If you have the simulator and the tedge container running, you can run the tests with:
 
+```sh
       just venv
       just setup
       just test
-
+```
 ## Build
 
 A package of the plugin, including the Modbus polling service and the Cloud Fieldbus operations, can be build with nfpm. To build the packages locally, make sure to install nfpm first.
@@ -192,8 +171,11 @@ To create the packages, you need to install nfpm first:
 
 After installing, you can build the Debian package with:
 
+     ```sh
      nfpm pkg --packager deb --target /tmp/
-
+    ```
+    
+  
 ## Deployment
 
 ### As Python script (for dev only)
